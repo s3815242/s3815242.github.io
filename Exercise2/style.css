@@ -1,0 +1,155 @@
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+:root{
+  /* first two colours come from Kuroi's Manga Pallete Palette */
+  /* https://lospec.com/palette-list/manga-pallete */
+  --col-01:#1B4965;
+  --col-02:#CAE9FF;
+  --col-03:#5FA8D3;
+  --col-04:#62B6CB;
+  --col-05:#BEE9E8;
+  --col-06: #000;
+  font-size: 16px;
+}
+
+ol{
+  /*Design nav bar by usig ol class from html page I used list style type and change NAV's 
+  background colour to blue. I used width for 100% instead of the pixel because I want Nav bar
+  to be able to resize itself when we resize the window*/
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #62b6cb;
+}
+
+li a{
+  /*This is where I set up the value for each block in Nav bar. To be display in block and each block 
+  have spaces wraped around texts ( Padding 8px and 16px) And using solid border Line size 1px and dark blue*/
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #1B4965;
+}
+
+li a:hover{
+  /*This is the value of when the user hover the mouse over navbar, navbar block background colour 
+  will chage to light green that I set up on col-5*/
+  background-color: #BEE9E8;
+}
+
+body{
+  padding: 1rem;
+  background-color: var(--col-02);
+  color: var(--col-01);
+  transition: color ease-in 5s;
+}
+
+section{
+  margin-bottom: 2rem;
+}
+
+h1{
+  /*Heading setting*/
+  font-size: 3rem;
+  transition: 0s;
+  
+}
+
+h1:hover{
+  /*The heading value setting for when the user hover the mouse over the H1 Heading. We used that colour from
+  the colour palette that we set up on class root*/
+  color:var(--col-04);
+  transition: 0s;
+  /*Transition time is start as soon as the user hover iver the heading*/
+  animation: colourCycle 10s ease-in 1;
+  /*The colour cycle animation has set for 10s with ease-in effect*/
+
+}
+
+@keyframes colourCycle {
+  0%{color: #00bbf9;}
+  50%{color: #fee440;}
+  100%{color: #f15bb5;}
+  /*Animation colourCycle setting a keyframe. I would like blue at the starting point, then I want yellow at half point
+  of animation. And Pink at the end. That's why we set up a time frame as 0%/ 50% and 100% */
+}
+
+h2{
+  font-size: 2rem;
+}
+
+p{
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+figcaption{
+  width: fit-content;
+}
+
+dl ul{
+  margin-bottom: 0;
+}
+
+li{
+  font-size: 1rem;
+}
+
+dd{
+  padding-left: 60px;
+}
+
+li ul{
+  padding-left: 40px;
+}
+
+.img-wrapper{
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.img-figure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-img{
+  width: 80%;
+}
+
+.res-columns{
+  column-width: 25rem;
+}
+
+/* medium devices 600 - 992 */
+@media only screen and (min-width: 600px) {
+  :root{
+    font-size: 20px;
+  }
+  
+  .img-wrapper{
+    width: 75%;
+    margin: 1.5rem auto;
+  }
+}
+
+/* medium devices 992 + */
+@media only screen and (min-width: 992px) {
+  :root{
+    font-size: 24px;
+  }
+
+  .img-wrapper{
+    max-width: fit-content;
+    float: right;
+    margin: 1.5rem;
+  }
+}
+
